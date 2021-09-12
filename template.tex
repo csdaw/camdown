@@ -2,6 +2,9 @@
 $if(print)$
   print,
 $endif$
+$if(index)$
+  index,
+$endif$
 $if(papersize)$
   $papersize$,
 $endif$
@@ -45,5 +48,7 @@ $endif$
 \mainmatter
 
 $body$
+
+\printthesisindex
 
 \end{document}

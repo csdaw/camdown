@@ -5,6 +5,7 @@ site: bookdown::bookdown_site
 
 ## PDF specific settings ##
 print: true
+index: true
 papersize: a4paper
 page-layout: twoside
 geometry: 'left=60mm,right=60mm,top=60mm,bottom=60mm'
@@ -28,5 +29,7 @@ output:
 Hi.
 
 Bye.
+
+Something about Fourier Transform. \index{Fourier Transform}
 
 <!-- This is a comment -->
