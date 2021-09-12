@@ -9,7 +9,8 @@ lineno: true
 index: true
 papersize: a4paper
 page-layout: twoside
-geometry: 'left=60mm,right=60mm,top=60mm,bottom=60mm'
+flushleft: true
+# geometry: 'left=60mm,right=60mm,top=60mm,bottom=60mm'
 fontsize: 12pt
 fontfamily: times
 
