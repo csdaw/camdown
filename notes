@@ -1,0 +1,4 @@
+## Dependencies
+
+- Need to install `bslib` and `downlit` packages to use `bookdown::bs4_book`
+output.
