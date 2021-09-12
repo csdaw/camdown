@@ -4,15 +4,17 @@
 %%                                                                            %%
 %% A PhD thesis LaTeX template for Cambridge University Engineering Department%%
 %%                                                                            %%
-%% Version: v2.4                                                              %%
+%% Version: v2.4.1                                                            %%
 %% Authors: Krishna Kumar                                                     %%
 %% License: MIT License (c) 2016-2018 Krishna Kumar                           %%
+%% Modified for bookdown: 2021 Charlotte Dawson                               %%
 %% GitHub Repo: https://github.com/kks32/phd-thesis-template/                 %%
+%%                                                                            %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % ************************** Class Identification ******************************
-\newcommand\fileversion{2.4}
-\newcommand\filedate{2018/04/12}
+\newcommand\fileversion{2.4.1}
+\newcommand\filedate{2021/09/12}
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{PhDThesisPSnPDF}[\filedate\space A PhD thesis class file
  by Krishna Kumar (v\fileversion)]
@@ -26,6 +28,10 @@
 % *********************** Define a Print/Online Version ************************
 \newif\if@print\@printfalse
 \DeclareOption{print}{\@printtrue}
+
+% ****************************** Define lineno *********************************
+\newif\ifPHD@lineno\PHD@linenofalse
+\DeclareOption{lineno}{\PHD@linenotrue}
 
 % ****************************** Define index **********************************
 \newif\ifPHD@index\PHD@indexfalse
@@ -218,13 +224,6 @@ footnotes.}
     if you prefer the \cite{} lassic draft mode. To tweak options see
     `preamble.tex'}}%
 
-
-% Line Numbers
-\newif\ifPHD@lineno\PHD@linenotrue
-\DeclareOption{lineno}{\PHD@linenotrue}
-\DeclareOption{nolineno}{\PHD@linenofalse}
-
-
 % Generates Warning for unknown options
 \DeclareOption*{
   \ClassWarning{PhDThesisPSnPDF}{Unknown or non-standard option
@@ -306,26 +305,7 @@ supported!}
   \number\PHD@hour\fi:\ifnum\PHD@minute<10 0\fi\number\PHD@minute
 }
 
-% ******************************* Draft Mode ***********************************
-% Initializing Draft Text
-\newcommand\SetDraftText[1]{}
-% Initializing Draft Version
-\newcommand\SetDraftVersion[1]{}
-% Initializing Draft Content
-\newcommand\SetDraftWMPosition[1]{}
-% Initializing Draft Gray Scale
-\newcommand\SetDraftGrayScale[1]{}
-
-% Classic Draft Mode
-\ifsetDraftClassic
-% Disable figures in `draft'\
-\setkeys{Gin}{draft=true}
-\fi
-
-% If Draft Mode is active
-\ifsetDraft
-% Disable figures in `draft'\
-\setkeys{Gin}{draft=false}
+% ****************************** Line numbers **********************************
 
 % Line numbering (can be switched off)
 \ifPHD@lineno
@@ -376,6 +356,27 @@ supported!}
 }
 
 \fi % End \ifPDH@lineno
+
+% ******************************* Draft Mode ***********************************
+% Initializing Draft Text
+\newcommand\SetDraftText[1]{}
+% Initializing Draft Version
+\newcommand\SetDraftVersion[1]{}
+% Initializing Draft Content
+\newcommand\SetDraftWMPosition[1]{}
+% Initializing Draft Gray Scale
+\newcommand\SetDraftGrayScale[1]{}
+
+% Classic Draft Mode
+\ifsetDraftClassic
+% Disable figures in `draft'\
+\setkeys{Gin}{draft=true}
+\fi
+
+% If Draft Mode is active
+\ifsetDraft
+% Disable figures in `draft'\
+\setkeys{Gin}{draft=false}
 
 % Creates a Watermark Draft at the specified location.
 % The settings can be tweaked in the preamble

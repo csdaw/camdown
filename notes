@@ -2,3 +2,7 @@
 
 - Need to install `bslib` and `downlit` packages to use `bookdown::bs4_book`
 output.
+
+## Class options
+
+- Still need to add: abstract, chapter, draft? (maybe)

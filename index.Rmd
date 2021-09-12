@@ -5,6 +5,7 @@ site: bookdown::bookdown_site
 
 ## PDF specific settings ##
 print: true
+lineno: true
 index: true
 papersize: a4paper
 page-layout: twoside
