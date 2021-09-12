@@ -1,4 +1,16 @@
 \documentclass[
+$if(print)$
+  print,
+$endif$
+$if(papersize)$
+  $papersize$,
+$endif$
+$if(page-layout)$
+  $page-layout$,
+$endif$
+$if(geometry)$
+  custommargin,
+$endif$
 $if(fontsize)$
   $fontsize$,
 $endif$
@@ -6,6 +18,11 @@ $if(fontfamily)$
   $fontfamily$,
 $endif$
 ]{PhDThesisPSnPDF}
+
+\ifsetCustomMargin
+  \usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
+  \setFancyHdr
+\fi
 
 \title{$title$}
 

@@ -4,6 +4,10 @@ author: "Charlotte Dawson"
 site: bookdown::bookdown_site
 
 ## PDF specific settings ##
+print: true
+papersize: a4paper
+page-layout: twoside
+geometry: 'left=60mm,right=60mm,top=60mm,bottom=60mm'
 fontsize: 12pt
 fontfamily: times
 
@@ -11,7 +15,7 @@ fontfamily: times
 output:
   bookdown::pdf_book: 
     template: template.tex
-    pandoc_args: "--top-level-division=chapter"
+    pandoc_args: '--top-level-division=chapter'
     keep_tex: true
   bookdown::gitbook: default
   bookdown::bs4_book: default
