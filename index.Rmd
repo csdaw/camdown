@@ -1,0 +1,18 @@
+---
+title: "Thesis Title"
+author: "Charlotte Dawson"
+site: bookdown::bookdown_site
+documentclass: PhDThesisPSnPDF
+output:
+  bookdown::pdf_book: 
+    keep_tex: true
+    pandoc_args: "--top-level-division=chapter"
+---
+
+# Hello World
+
+Hi.
+
+Bye.
+
+<!-- This is a comment -->
