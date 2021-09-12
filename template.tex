@@ -1,0 +1,32 @@
+\documentclass[
+$if(fontsize)$
+  $fontsize$,
+$endif$
+$if(fontfamily)$
+  $fontfamily$,
+$endif$
+]{PhDThesisPSnPDF}
+
+\title{$title$}
+
+\author{$author$}
+
+\begin{document}
+
+\maketitle
+
+\frontmatter
+
+\tableofcontents
+
+\listoffigures
+
+\listoftables
+
+\printnomenclature
+
+\mainmatter
+
+$body$
+
+\end{document}
