@@ -2,4 +2,6 @@
 
 Here is some more placeholder text.
 
+\newpage
+
 The quick brown fox jumps over the lazy dog.

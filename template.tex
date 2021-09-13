@@ -52,6 +52,26 @@ $endif$
 
 \frontmatter
 
+$if(chapter)$
+  % Do nothing
+$else$
+\begin{dedication}
+  $dedication$
+\end{dedication}
+
+\begin{declaration}
+  $declaration$
+\end{declaration}
+
+\begin{acknowledgements}
+  $acknowledgements$
+\end{acknowledgements}
+
+\begin{abstract}
+  $abstract$
+\end{abstract}
+$endif$
+
 \tableofcontents
 
 \listoffigures

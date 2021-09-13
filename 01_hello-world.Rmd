@@ -4,4 +4,6 @@ Hi.
 
 Bye.
 
+\newpage
+
 Something about Fourier Transform. \index{Fourier Transform}
