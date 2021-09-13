@@ -15,6 +15,7 @@ acknowledgements: |
 abstract: |
   `r paste(readLines("frontmatter/_abstract.Rmd"), collapse = '\n  ')`
 bibliography: references/references.bib
+csl: templates/ieee.csl
 site: bookdown::bookdown_site
 chapter: false
 print: true
