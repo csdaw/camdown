@@ -12,7 +12,8 @@ output.
 Steps: 
 
 1. Set chapter: true
-2. Add chapter Rmd files you want to knit to _bookdown.yaml
+2. Add chapter Rmd files you want to knit to _bookdown.yaml and comment out
+the rmd_subdir command.
 3. Optionally, add `\setcounter{chapter}{x}` to before the chapter heading to
 set the chapter number that you want, where x is the chapter number you want
 minus 1 i.e. use x = 2 when you want chapter 3.

@@ -6,7 +6,6 @@ dept: 'Department of Biochemistry'
 university: 'University of Cambridge'
 university-crest: 'figures/crests/university_crest'
 university-crest-width: '0.2\textwidth' # use 0.45\textwidth for crest_wide
-site: bookdown::bookdown_site
 dedication: |
   `r paste(readLines("frontmatter/_dedication.Rmd"), collapse = '\n  ')`
 declaration:  |
@@ -15,8 +14,8 @@ acknowledgements: |
   `r paste(readLines("frontmatter/_acknowledgements.Rmd"), collapse = '\n  ')`
 abstract: |
   `r paste(readLines("frontmatter/_abstract.Rmd"), collapse = '\n  ')`
-
-## PDF specific settings ##
+bibliography: references/references.bib
+site: bookdown::bookdown_site
 chapter: false
 print: true
 lineno: true
@@ -27,17 +26,17 @@ flushleft: false
 # geometry: 'left=60mm,right=60mm,top=60mm,bottom=60mm'
 fontsize: 12pt
 fontfamily: times
-
-## Output ##
 output:
   bookdown::pdf_book: 
     template: template.tex
     pandoc_args: '--top-level-division=chapter'
     keep_tex: true
-  bookdown::gitbook: default
   bookdown::bs4_book: default
+  bookdown::gitbook: default
   bookdown::word_document2: 
     toc: true
 ---
 
-<!-- This is a comment -->
+<!-- This chunk includes the front page content in HTML output -->
+```{r ebook-welcome, child = 'frontmatter/_ebook-frontpage.Rmd', eval=knitr::is_html_output()}
+```

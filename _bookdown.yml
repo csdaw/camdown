@@ -1,1 +1,3 @@
 # rmd_files: ["index.Rmd", "01_hello-world.Rmd", "02_hello-again.Rmd"]
+
+rmd_subdir: ["backmatter"]

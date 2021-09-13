@@ -1,0 +1,4 @@
+# References {-}
+
+<!-- The references will be placed whereever the line below is -->
+<div id="refs"></div>
