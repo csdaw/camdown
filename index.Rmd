@@ -4,12 +4,13 @@ author: "Charlotte Dawson"
 site: bookdown::bookdown_site
 
 ## PDF specific settings ##
+chapter: false
 print: true
 lineno: true
 index: true
 papersize: a4paper
 page-layout: twoside
-flushleft: true
+flushleft: false
 # geometry: 'left=60mm,right=60mm,top=60mm,bottom=60mm'
 fontsize: 12pt
 fontfamily: times
@@ -25,13 +26,5 @@ output:
   bookdown::word_document2: 
     toc: true
 ---
-
-# Hello World
-
-Hi.
-
-Bye.
-
-Something about Fourier Transform. \index{Fourier Transform}
 
 <!-- This is a comment -->
