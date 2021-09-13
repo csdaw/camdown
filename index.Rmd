@@ -29,7 +29,7 @@ fontsize: 12pt
 fontfamily: times
 output:
   bookdown::pdf_book: 
-    template: template.tex
+    template: templates/template.tex
     pandoc_args: '--top-level-division=chapter'
     keep_tex: true
   bookdown::bs4_book: default
