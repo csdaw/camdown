@@ -1,4 +1,10 @@
 ---
+knit: (function(input, ...) {
+    thesis_formats <- "pdf";
+    
+    source("R/knit-thesis.R");
+    knit_thesis(input, thesis_formats, ...)
+  })
 title: |
   `camdown` \
   A University of Cambridge Thesis Template Using `bookdown`
@@ -27,12 +33,12 @@ acknowledgements: |
   `r paste(readLines("frontmatter/_acknowledgements.Rmd"), collapse = '\n  ')`
 abstract: |
   `r paste(readLines("frontmatter/_abstract.Rmd"), collapse = '\n  ')`
-bibliography: references/references.bib
+bibliography: [references/references.bib, references/additional-references.bib]
 csl: templates/ieee.csl
 site: bookdown::bookdown_site
 chapter: false
 print: true
-lineno: true
+lineno: false
 index: true
 papersize: a4paper
 page-layout: twoside
