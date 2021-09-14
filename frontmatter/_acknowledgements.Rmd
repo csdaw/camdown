@@ -1,1 +1,17 @@
-I would like to acknowledge ...
+You might like to thank your supervisor, advisor, colleagues, collaborators,
+funding bodies, institutions, and of course family and friends. 
+
+I am grateful
+for Yihui Xie for creating `knitr`, `rmarkdown`, `bookdown`,  and `tinytex`
+amongst many other software packages which I use on on a daily basis. To 
+Krishna Kumar I give many thanks for creating the CUED PhD thesis \LaTeX\ template 
+upon which this template relies. I am also grateful for Chester Ismay and his
+`thesisdown` package which inspired many people including myself to write their
+theses in *R Markdown*. Lastly, I would like to thank Ulrik Lyngs, 
+whose `oxforddown` template is the basis and inspiration for this thesis template.
+
+\begin{flushright}
+Charlotte Dawson \\
+Downing College, Cambridge \\
+14 September 2021
+\end{flushright}

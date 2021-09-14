@@ -1,1 +1,8 @@
-This is the abstract.
+The `camdown` template is for writing a University of Cambridge thesis.
+The template draws heavily from Ulrik Lyngs' excellent `oxforddown` template, 
+and relies upon the `PhDThesisPSnPDF` \LaTeX\ class written by Krishna Kumar.
+
+The template's sample content is based on `oxforddown` and 
+describes how to write a thesis in R markdown using *R Markdown* and `bookdown`. 
+I hope `camdown` proves easy to use and will help future University of 
+Cambridge students move toward producing open and reproducible research.
