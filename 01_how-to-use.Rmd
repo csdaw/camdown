@@ -1,9 +1,58 @@
-# Hello World
+# How to use
 
-Hi [@Dou72].
+## How `camdown` is structured
 
-Bye.
+### index.Rmd
 
-\newpage
+In index.Rmd you set your thesis' basic metadata (e.g. title, author, 
+college, etc.). Optional fields have been commented out.
 
-Something about Fourier Transform. \index{Fourier Transform}
+```{yaml}
+title: |
+  `oxforddown`: \
+  An Oxford University Thesis \
+  Template for R Markdown
+# subtitle: 'Subtitle'
+author: 'Author Name'
+dept: 'Department Name'
+university: 'University of Cambridge'
+university-crest: 'figures/crests/university_crest'
+university-crest-width: '0.3\textwidth'
+college: 'College Name'
+# college-shield: 'figures/crests/Downing'
+# college-shield-width: '0.2\textwidth'
+# supervisor: 'Prof. A.B. Supervisor'
+# supervisor-role: '**Supervisor: **'
+# supervisor-linewidth: '0.35\textwidth'
+# advisor: 'Dr. A. Advisor'
+# advisor-role: '**Advisor: **'
+# advisor-linewidth: '0.25\textwidth'
+degree-title: 'Doctor of Philosophy'
+date: 'September 2021'
+```
+
+Then you add the text for your dedication, declaration, acknowledgements,
+and abstract. Here we just paste the text from some **.Rmd** files which 
+should be placed in the **frontmatter/** folder. Alternatively, you can just
+write the text by hand into **index.Rmd**.
+
+```{yaml}
+dedication: |
+  `r paste(readLines("frontmatter/_dedication.Rmd"), collapse = '\n  ')`
+declaration:  |
+  `r paste(readLines("frontmatter/_declaration.Rmd"), collapse = '\n  ')`
+acknowledgements: |
+  `r paste(readLines("frontmatter/_acknowledgements.Rmd"), collapse = '\n  ')`
+abstract: |
+  `r paste(readLines("frontmatter/_abstract.Rmd"), collapse = '\n  ')`
+```
+
+### frontmatter/
+
+### Chapter .Rmd files
+
+### backmatter/
+
+## Building the entire thesis
+
+## Building selected chapter(s)
