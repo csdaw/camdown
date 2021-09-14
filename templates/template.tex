@@ -76,8 +76,35 @@ $endif$
 
 \dept{$dept$}
 
+\college{$college$}
 \university{$university$}
 \crest{\includegraphics[width=$university-crest-width$]{$university-crest$}}
+
+$if(college-shield)$
+\collegeshield{\includegraphics[width=$college-shield-width$]{$college-shield$}}
+$endif$
+
+$if(supervisor)$
+\supervisor{$supervisor$}
+\supervisorlinewidth{$supervisor-linewidth$}
+$endif$
+
+$if(supervisor-role)$
+\supervisorrole{$supervisor-role$}
+$endif$
+
+$if(advisor)$
+\advisor{$advisor$}
+\advisorlinewidth{$advisor-linewidth$}
+$endif$
+
+$if(advisor-role)$
+\advisorrole{$advisor-role$}
+$endif$
+
+\degreetitle{$degree-title$}
+
+\degreedate{$date$}
 
 \begin{document}
 

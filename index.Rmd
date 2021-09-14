@@ -6,6 +6,17 @@ dept: 'Department of Biochemistry'
 university: 'University of Cambridge'
 university-crest: 'figures/crests/university_crest'
 university-crest-width: '0.2\textwidth' # use 0.45\textwidth for crest_wide
+college: 'Downing College'
+# college-shield: 'figures/crests/Downing'
+# college-shield-width: '0.2\textwidth'
+# supervisor: 'Prof. A.B. Supervisor'
+# supervisor-role: '**Supervisor: **'
+# supervisor-linewidth: '0.35\textwidth'
+# advisor: 'Dr. A. Advisor'
+# advisor-role: '**Advisor: **'
+# advisor-linewidth: '0.25\textwidth'
+degree-title: 'Doctor of Philosophy'
+date: 'September 2021'
 dedication: |
   `r paste(readLines("frontmatter/_dedication.Rmd"), collapse = '\n  ')`
 declaration:  |
