@@ -4,17 +4,17 @@
 
 ### index.Rmd
 
-In index.Rmd you set your thesis' basic metadata (e.g. title, author, 
+This file is the essential, central part of the thesis. First, 
+in **index.Rmd** you set your thesis' basic metadata (e.g. title, author, 
 college, etc.). Optional fields have been commented out.
 
-```{yaml}
+```yaml
 title: |
-  `oxforddown`: \
-  An Oxford University Thesis \
-  Template for R Markdown
-# subtitle: 'Subtitle'
-author: 'Author Name'
-dept: 'Department Name'
+  `camdown` \
+  A University of Cambridge Thesis Template Using `bookdown`
+# subtitle: 'Optional subtitle'
+author: 'Charlotte Dawson'
+dept: 'Department of Biochemistry'
 university: 'University of Cambridge'
 university-crest: 'figures/crests/university_crest'
 university-crest-width: '0.3\textwidth'
@@ -34,21 +34,104 @@ date: 'September 2021'
 Then you add the text for your dedication, declaration, acknowledgements,
 and abstract. Here we just paste the text from some **.Rmd** files which 
 should be placed in the **frontmatter/** folder. Alternatively, you can just
-write the text by hand into **index.Rmd**.
+write the text by hand into **index.Rmd** (though I find using separate **.Rmd**
+files easier).
 
-```{yaml}
+```yaml
 dedication: |
-  `r paste(readLines("frontmatter/_dedication.Rmd"), collapse = '\n  ')`
+  ``r ''`r paste(readLines("frontmatter/_dedication.Rmd"), collapse = '\n  ')`
 declaration:  |
-  `r paste(readLines("frontmatter/_declaration.Rmd"), collapse = '\n  ')`
+  ``r ''`r paste(readLines("frontmatter/_declaration.Rmd"), collapse = '\n  ')`
 acknowledgements: |
-  `r paste(readLines("frontmatter/_acknowledgements.Rmd"), collapse = '\n  ')`
+  ``r ''`r paste(readLines("frontmatter/_acknowledgements.Rmd"), collapse = '\n  ')`
 abstract: |
-  `r paste(readLines("frontmatter/_abstract.Rmd"), collapse = '\n  ')`
+  ``r ''`r paste(readLines("frontmatter/_abstract.Rmd"), collapse = '\n  ')`
 ```
+
+Next set the filepaths for any bibliography **.bib** files containing your
+references and a **.csl** file describing the citation formatting style.
+
+```yaml
+bibliography: [references/references.bib, references/additional-references.bib]
+csl: templates/ieee.csl
+```
+
+Then come options to customise the layout of the **.pdf** output specifically.
+See the next chapter for detailed explanations of these options.
+
+```yaml
+chapter: false
+print: true
+lineno: false
+index: true
+papersize: a4paper
+page-layout: twoside
+# page-style: 'PageStyleI'
+flushleft: false
+# geometry: 'left=60mm,right=60mm,top=60mm,bottom=60mm'
+fontsize: 12pt
+fontfamily: times
+```
+
+The output settings come last.
+
+```yaml
+site: bookdown::bookdown_site
+output:
+  bookdown::pdf_book: 
+    template: templates/template.tex
+    pandoc_args: '--top-level-division=chapter'
+    keep_tex: true
+  bookdown::bs4_book: default
+  bookdown::gitbook: default
+  bookdown::word_document2: 
+    toc: true
+```
+
+Lastly, there is a code chunk to include the **.Rmd** file which has the text
+that goes on the front page of the `gitbook` and `bs4_book` outputs.
+
+````md
+```{r ebook-welcome, child = 'frontmatter/_ebook-frontpage.Rmd', eval=knitr::is_html_output()}`r ''`
+```
+````
 
 ### frontmatter/
 
+This folder contains **.Rmd** files for your dedication, declaration, 
+acknowledgements, and abstract, which are only included in the `pdf_book` and 
+`word_document2` outputs. It also contains a welcome note which is only 
+included in the `bs4_book` or `gitbook` outputs. These files start with an
+underscore (e.g. **\_abstract.Rmd**) which means they will not automatically
+be included in the thesis, rather we explicitly include them in **index.Rmd**.
+
+You might like to add additional front matter, e.g. a preface before the 
+abstract. In this case you might do the following:
+
+1. Create **\_preface.Rmd** in the **frontmatter/** folder and write whatever
+text you want.
+1. Add the following lines to **templates/template.tex** before where the 
+abstract is defined in the preface.
+
+    ```tex
+    \newenvironment{preface}{
+    \cleardoublepage
+    \setsinglecolumn
+    \chapter*{\centering \Large Preface}
+    \thispagestyle{empty}
+    }
+    
+    \begin{preface}
+      $preface$
+    \end{preface}
+    ```
+1. Add the following lines to the YAML header of **index.Rmd**.
+
+    ```yaml
+    preface: |
+      ``r ''`r paste(readLines("frontmatter/_preface.Rmd"), collapse = '\n  ')`
+    ```
+    
 ### Chapter .Rmd files
 
 ### backmatter/

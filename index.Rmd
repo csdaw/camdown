@@ -35,7 +35,6 @@ abstract: |
   `r paste(readLines("frontmatter/_abstract.Rmd"), collapse = '\n  ')`
 bibliography: [references/references.bib, references/additional-references.bib]
 csl: templates/ieee.csl
-site: bookdown::bookdown_site
 chapter: false
 print: true
 lineno: false
@@ -47,6 +46,7 @@ flushleft: false
 # geometry: 'left=60mm,right=60mm,top=60mm,bottom=60mm'
 fontsize: 12pt
 fontfamily: times
+site: bookdown::bookdown_site
 output:
   bookdown::pdf_book: 
     template: templates/template.tex

@@ -1,3 +1,5 @@
 # rmd_files: ["index.Rmd", "01_hello-world.Rmd", "backmatter/97_references.Rmd"]
 
 rmd_subdir: ["backmatter"]
+
+delete_merged_file: false

@@ -3,5 +3,6 @@
 .RData
 .Ruserdata
 _book
+_main.Rmd
 _main.nlo
 .DS_Store

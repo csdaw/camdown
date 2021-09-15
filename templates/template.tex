@@ -72,6 +72,17 @@ $if(csl-refs)$
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 $endif$
 
+% Fix 'Environment Shaded undefined' error
+% see https://stackoverflow.com/questions/41052687
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+
+% Fix 'Undefined control sequence. \tightlist' error
+% see https://stackoverflow.com/questions/40438037
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
 \title{$title$}
 \subtitle{$subtitle$}
 
