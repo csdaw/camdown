@@ -1,7 +1,15 @@
+## My TODO
+
+- Determine latex package dependencies
+
 ## Dependencies
 
+- bookdown (which depends on htmltools, knit, rmarkdown, jquerylib, xfun, tinytex, yaml)
+- Pandoc (which is included with Rstudio?)
+- Can build html version as is without any modification
 - Need to install `bslib` and `downlit` packages to use `bookdown::bs4_book`
 output.
+- Need a LaTeX installation for pdf output
 
 ## Class options
 
@@ -17,4 +25,23 @@ the rmd_subdir command.
 3. Optionally, add `\setcounter{chapter}{x}` to before the chapter heading to
 set the chapter number that you want, where x is the chapter number you want
 minus 1 i.e. use x = 2 when you want chapter 3.
+
+## README
+
+Some statement describing quick start below, see website for more detailed usage
+instructions.
+
+## Quick start
+
+Quick start instructions here.
+
+- Fork (or not) and download this repo as zip
+- Open .rproj in RStudio
+- 
+
+## Not required but recommended
+
+- citr + Zotero
+- kableextra
+- flextable
 
